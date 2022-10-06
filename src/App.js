@@ -1,24 +1,37 @@
+import React from 'react';
+import { Routes, Router,  } from 'react-router-dom';
+
 import logo from './logo.svg';
+
 import './App.css';
+
+//components
+import HeaderComp from './components/main/HeaderComp';
+import Hero from './components/sections/Hero';
+import About from './components/sections/About';
+import Resume from './components/sections/Resume';
+import Portofolio from './components/sections/Portofolio';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <i className="bi bi-list mobile-nav-toggle d-lg-none"></i>
+      
+      {/* Hedaer */}
+      <HeaderComp />
+
+      {/* Sections */}
+      <Hero />
+
+      <main id="main">
+        <About />
+        <Resume />
+        <Portofolio />
+      </main>
+
+      { console.log(`%PUBLIC_URL%`) }
+    </React.Fragment>
   );
 }
 
