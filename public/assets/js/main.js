@@ -25,16 +25,6 @@
           return document.querySelector(el)
         }
       }
-  
-    /**
-     * Preloader
-     */
-     let preloader = select('#preloader');
-     if (preloader) {
-       window.addEventListener('load', () => {
-         preloader.remove()
-       });
-     }
 
   /**
    * Easy event listener function
@@ -179,6 +169,16 @@
 
   $(()=>{
     console.log('ready')
+
+    /**
+     * Preloader
+     */
+     let preloader = select('#preloader');
+     if (preloader) {
+       window.addEventListener('load', () => {
+         preloader.remove()
+       });
+     }
 
     /**
    * Porfolio isotope and filter

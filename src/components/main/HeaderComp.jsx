@@ -25,7 +25,7 @@ export default class HeaderComp extends Component {
               </a>
             </li>
             <li>
-              <a href="#portofolio" className="nav-link scrollto">
+              <a href="#portfolio" className="nav-link scrollto">
                 <i className="bx bx-book-content"></i>
                 <span>Portofolio</span>
               </a>

@@ -28,8 +28,8 @@ export default class Resume extends Component {
                             <p><em>The State Islamic University of Maulana Malik Ibrahim Malang</em></p>        
                         </div>
                         <div className="resume-item">
-                            <h4>Prakerja Course</h4>
-                            <h5>06/2022 - 07/2022</h5>
+                            <h4>Babastudio Course</h4>
+                            <h5>Juny 2022 - July 2022</h5>
                             <p><em>Mengimplementasikan pemrograman terstruktur berorientasi objek,menggunakan library atau komponen pre existing dalam pembuatan website e commerce sebagai desainer web <b>(React)</b></em></p>
                             <p>
                                 <a href="https://drive.google.com/file/d/1QX3CXtERpJkTCKz6CayvZUDSIKTcINfK/view" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'blue' }}>
