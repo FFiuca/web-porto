@@ -1,4 +1,11 @@
 [[redirects]]
-  from = "/*"
+  from = "/"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/his"
+  to = "/his"
+  status = 301
+  force = false
+  query = {}
