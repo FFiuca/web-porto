@@ -1,2 +1,4 @@
 # Redirects from what the browser requests to what we serve
-/his              /his          301
+#/his              /his          301
+
+/*   /index.html   200
