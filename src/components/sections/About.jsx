@@ -255,7 +255,7 @@ export default class About extends Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-sm-12 col-md-6">
+                                <div className="col-sm-6 col-md-6">
                                     <div className="count-box mt-0">
                                         <FontAwesomeIcon icon={faGitAlt} style={{ 
                                             background: '#E94E31',
@@ -276,7 +276,7 @@ export default class About extends Component {
                                     </div>
                                 </div>
 
-                                <div className="col-sm-12 col-md-6">
+                                <div className="col-sm-6 col-md-6">
                                     <div className="count-box mt-0">
                                         <FontAwesomeIcon icon={faCompassDrafting} style={{ 
                                             background: '#6096c6',
@@ -297,7 +297,7 @@ export default class About extends Component {
                                     </div>
                                 </div>
 
-                                <div className="col-sm-12 col-md-6">
+                                <div className="col-sm-6 col-md-6">
                                     <div className="count-box mt-0">
                                         <FontAwesomeIcon icon={faPlayCircle} style={{ 
                                             background: '#26a35a',
@@ -317,7 +317,7 @@ export default class About extends Component {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="col-sm-12 col-md-6">
+                                <div className="col-sm-6 col-md-6">
                                     <div className="count-box mt-0">
                                         <FontAwesomeIcon icon={faCpanel} style={{ 
                                             background: '#E55E26',

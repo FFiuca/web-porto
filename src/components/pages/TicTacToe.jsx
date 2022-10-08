@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 
-export default class FooterComp extends Component {
+export default class TicTacToe extends Component {
   render() {
     return (
-      <div>FooterComp</div>
+      <div>TicTacToe</div>
     )
   }
 }

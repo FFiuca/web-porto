@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 
+
 export default class HeaderComp extends Component {
+
   render() {
     return (
         <header id="header" className="d-flex flex-column justify-content-center">
-        <nav id="navbar" className="navbar nav-menu">
+        <nav id="navbar" className="navbar nav-menu" data-aos="fade-up">
           <ul>
             <li>
               <a href="#hero" className="nav-link scrollto active">
@@ -30,7 +32,7 @@ export default class HeaderComp extends Component {
                 <span>Portofolio</span>
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="#services" className="nav-link scrollto">
                 <i className="bx bx-server"></i>
                 <span>Services</span>
@@ -41,7 +43,7 @@ export default class HeaderComp extends Component {
                 <i className="bx bx-envelope"></i>
                 <span>Contact</span>
               </a>
-            </li>
+            </li> */}
 
           </ul>
         </nav>

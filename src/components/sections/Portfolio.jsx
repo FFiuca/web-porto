@@ -1,7 +1,14 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
+
+import { Button } from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+
 import { select } from '../../mainFn/mainFn'
 import Aos from 'aos'
+import { faPlay, faPlayCircle } from '@fortawesome/free-solid-svg-icons'
 
 export default class Portfolio extends Component {
    
@@ -52,7 +59,7 @@ export default class Portfolio extends Component {
               <p>2020</p>
               <div className="portfolio-links">
                 <a href="\assets\img\portfolio\kl2.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 2"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <a href="/catalog" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -60,13 +67,13 @@ export default class Portfolio extends Component {
 
         <div className="col-lg-4 col-md-6 portfolio-item filter-app">
           <div className="portfolio-wrap">
-            <img src="\assets\img\portfolio\dosting.png" className="img-fluid" alt="" />
+            <img src="\assets\img\portfolio\dst.png" className="img-fluid" alt="" />
             <div className="portfolio-info">
-              <h4>Membership System</h4>
+              <h4>Membership Management System</h4>
               <p>2021</p>
               <div className="portfolio-links">
-                <a href="\assets\img\portfolio\dosting.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 2"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <a href="\assets\img\portfolio\dst.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 2"><i className="bx bx-plus"></i></a>
+                <a href="/membership" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -76,7 +83,7 @@ export default class Portfolio extends Component {
           <div className="portfolio-wrap">
             <img src="\assets\img\portfolio\8220.jpg" className="img-fluid" alt="" />
             <div className="portfolio-info">
-              <h4>E Commerce System</h4>
+              <h4>E-Commerce System</h4>
               <p>
                 August 2022
                 <br />
@@ -86,7 +93,7 @@ export default class Portfolio extends Component {
               </p>
               <div className="portfolio-links">
                 <a href="\assets\img\portfolio\8220.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 3"><i className="bx bx-plus"></i></a>
-                <a href="https://drive.google.com/drive/folders/1Er-jIp6qti5Nah6GvJPbwZ_bGNOTK5U8?usp=sharing" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <a href="/ecommerce" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -100,7 +107,11 @@ export default class Portfolio extends Component {
               <p>September 2022</p>
               <div className="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 1"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <Link to={{ pathname : '/tictactoe' }} className="portfolio-lightbox" title="Portfolio Details">
+                  <Button variant={'success'} style={{ borderRadius : '50%' }}>
+                      <FontAwesomeIcon icon={faPlay} /> 
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

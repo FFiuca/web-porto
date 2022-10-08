@@ -6,7 +6,8 @@ import Typed from 'typed.js';
 export default class Hero extends Component {
 
     componentDidMount(){
-        Aos.init()
+        setTimeout(()=> Aos.init(), 500)
+        
 
         let typed = new Typed('#typed', {
             strings: ['Full Stack Developer','Back-End Engineering'],

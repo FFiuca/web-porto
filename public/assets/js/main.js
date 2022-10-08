@@ -12,7 +12,7 @@
   console.log('start main js')
 
    
-  setTimeout(()=>{
+  $(()=>{
 
      /**
    * Easy selector helper function
@@ -176,7 +176,11 @@
      let preloader = select('#preloader');
      if (preloader) {
        window.addEventListener('load', () => {
-         preloader.remove()
+        setTimeout((a)=>{
+          console.log(a)
+
+          preloader.remove()
+        }, 500)
        });
      }
 
@@ -281,6 +285,6 @@
    */
   new PureCounter();
   
-  }, 500)
+  })
 
 })()

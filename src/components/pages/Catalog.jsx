@@ -1,20 +1,17 @@
 import React, { Component } from 'react'
 
-export default class HIS extends Component {
-    
+export default class Catalog extends Component {
+
     componentDidMount(){
         setTimeout(()=>{
             console.log(document.querySelector('#preloader').remove())
 
         }, 500)
-        
-
-        // document.getElementById('preloader').remove()
     }
 
   render() {
     return (
-        <main id="main">
+       <main id="main">
         <section id="portfolio-details" className="portfolio-details">
           <div className="container">
       
@@ -25,27 +22,15 @@ export default class HIS extends Component {
                   <div className="swiper-wrapper align-items-center">
       
                     <div className="swiper-slide">
-                      <img src="\assets\img\portfolio\sr.jpeg" alt="" />
+                      <img src="\assets\img\portfolio\kl2.png" alt="" />
                     </div>
       
                     <div className="swiper-slide">
-                      <img src="\assets\img\portfolio\Web capture_7-10-2022_141347_sr.jpeg" alt="" />
+                      <img src="\assets\img\portfolio\kl3.jpeg" alt="" />
                     </div>
       
                     <div className="swiper-slide">
-                      <img src="\assets\img\portfolio\Web capture_7-10-2022_141451_sr.jpeg" alt="" />
-                    </div>
-
-                    <div className="swiper-slide">
-                      <img src="\assets\img\portfolio\Web capture_7-10-2022_141515_sr.jpeg" alt="" />
-                    </div>
-
-                    <div className="swiper-slide">
-                      <img src="\assets\img\portfolio\Web capture_7-10-2022_141544_sr.jpeg" alt="" />
-                    </div>
-
-                    <div className="swiper-slide">
-                      <img src="\assets\img\portfolio\admin-sr.jpeg" alt="" />
+                      <img src="\assets\img\portfolio\kl4.jpeg" alt="" />
                     </div>
       
                   </div>
@@ -55,7 +40,7 @@ export default class HIS extends Component {
       
               <div className="col-lg-4">
                 <div className="portfolio-info">
-                  <h3> Hospitalty Informastion System </h3>
+                  <h3> Catalog Products </h3>
                   <ul>
                     {/* <li><strong>Category</strong>: Web design</li>
                     <li><strong>Client</strong>: ASU Company</li> */}
@@ -66,7 +51,7 @@ export default class HIS extends Component {
                 <div className="portfolio-description">
                   <h2>About Portfolio</h2>
                   <p class="text-justify" style={{ textAlign: 'justify' }}>
-                    It is an application the owner to manage and monitor reserved rooms. Such as Hospitalty Information System generally, this apps also have booking management, guest relationship management, an avaibilty and reservation system and financial statements.
+                    This is website displays the owner's products. The user also can order what they wants by chats for products choosen by user before.
                   </p>
                 </div>
               </div>
@@ -77,7 +62,6 @@ export default class HIS extends Component {
         </section>
       
       </main>
-      
     )
   }
 }

@@ -5,15 +5,14 @@ import logo from './logo.svg';
 
 import './App.css';
 
-//components
-import HeaderComp from './components/main/HeaderComp';
-import Hero from './components/sections/Hero';
-import About from './components/sections/About';
-import Resume from './components/sections/Resume';
-import Portfolio from './components/sections/Portfolio';
 
 //page
+import Dashboard from './components/pages/Dashboard';
 import HIS from './components/pages/HIS';
+import TicTacToe from './components/pages/TicTacToe';
+import Membership from './components/pages/Membership';
+import Catalog from './components/pages/Catalog';
+import ECommerce from './components/pages/ECommerce';
 
 
 function App() {
@@ -22,24 +21,14 @@ function App() {
       <i className="bi bi-list mobile-nav-toggle d-lg-none"></i>
       <Router>
         <Routes>
-          <Route exact path="/" element={
-            <React.Fragment>
-              {/* Hedaer */}
-              <HeaderComp />
-
-              {/* Sections */}
-              <Hero />
-
-              <main id="main">
-                <About />
-                <Resume />
-                <Portfolio />
-              </main>
-            </React.Fragment>
-          } />
+          <Route exact path="/" element={<Dashboard />} />
 
           {/* Page */}
-          <Route path="his" element={<HIS></HIS>}></Route>
+          <Route path="/his" element={<HIS></HIS>}></Route>
+          <Route path="/catalog" element={<Catalog />} ></Route>
+          <Route path="/membership" element={<Membership />} ></Route>
+          <Route path="/tictactoe" element={<TicTacToe />} />
+          <Route path="/ecommerce" element={<ECommerce />}></Route>
         </Routes>
 
       </Router>
