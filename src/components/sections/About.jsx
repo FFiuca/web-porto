@@ -67,7 +67,9 @@ export default class About extends Component {
                             </div>
                             </div>
                             <p>
-                                I also recently buy some courses to levelling up my skill. Perhaps some day, I can mastering DevOps Skills and others Back-End Technology. 
+                                I also often buy some courses to levelling up my skill. Perhaps some day, I can mastering DevOps Skills and others Back-End Technologies because I really love it.
+
+                                As a software engineer, I like to write code as a simply and functionally that perhaps can increase the performance for builded software. Also this is one of my experiences what I got during became software engineer. My goal is I can to be importan people in Technology Word, maybe cretae programming langunge or framework libraries that can help other developers.
                             </p>
                         </div>
                     </div>
@@ -223,7 +225,7 @@ export default class About extends Component {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="col-6">
+                                <div className="col">
                                     <div className="count-box mt-0">
                                         <FontAwesomeIcon icon={faNodeJs} style={{ 
                                             background: '#619561',
@@ -255,7 +257,7 @@ export default class About extends Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-sm-6 col-md-6">
+                                <div className="col-6">
                                     <div className="count-box mt-0">
                                         <FontAwesomeIcon icon={faGitAlt} style={{ 
                                             background: '#E94E31',
@@ -276,7 +278,7 @@ export default class About extends Component {
                                     </div>
                                 </div>
 
-                                <div className="col-sm-6 col-md-6">
+                                <div className="col-6">
                                     <div className="count-box mt-0">
                                         <FontAwesomeIcon icon={faCompassDrafting} style={{ 
                                             background: '#6096c6',
@@ -297,7 +299,7 @@ export default class About extends Component {
                                     </div>
                                 </div>
 
-                                <div className="col-sm-6 col-md-6">
+                                <div className="col-6">
                                     <div className="count-box mt-0">
                                         <FontAwesomeIcon icon={faPlayCircle} style={{ 
                                             background: '#26a35a',
@@ -317,7 +319,7 @@ export default class About extends Component {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="col-sm-6 col-md-6">
+                                <div className="col-6">
                                     <div className="count-box mt-0">
                                         <FontAwesomeIcon icon={faCpanel} style={{ 
                                             background: '#E55E26',
