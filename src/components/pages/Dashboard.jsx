@@ -19,14 +19,18 @@ class Dashboard extends Component {
       // this.context.changeState({
       //   root : {backgroundColor : '#fff'}
       // })
+
+      // this.context.changeState({
+      //   root : {backgroundColor : '#fff'}
+      // })
     // }, 500)
 
   }
 
   componentWillUnmount(){
-    this.context.changeState({
-      root : {backgroundColor : '#14bdac'}
-    })
+    // this.context.changeState({
+    //   root : {backgroundColor : '#14bdac'}
+    // })
   }
 
     render() {

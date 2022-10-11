@@ -6,8 +6,9 @@ import { GlobalConsumer, GContext } from '../contexts/GlobalContext'
 
 import Aos from 'aos'
 import { faFortAwesome } from '@fortawesome/free-brands-svg-icons'
-import { faX, faO } from '@fortawesome/free-solid-svg-icons'
+import { faX, faO, faPlay, faRepeat, faTurkishLiraSign } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Button, Modal, ModalDialog, ModalBody, ModalFooter, ModalHeader } from 'react-bootstrap'
 
 import ColComp from '../sections/ttt/ColComp'
 
@@ -54,6 +55,12 @@ export default class TicTacToe extends Component {
     inGame : {
       whoTurn : 'human',
       statusGameOver : false,
+      statusDraw : false
+    },
+    modal : {
+      mdEnd : {
+        status : false
+      }
     }
   }
 
@@ -64,7 +71,7 @@ export default class TicTacToe extends Component {
     let playOff = this.state.playOff
     let inGame = this.state.inGame
 
-    // if(statusGameOver){
+    // if(inGame.statusGameOver){
       const combination = [
         [0,1,2],
         [3,4,5],
@@ -95,7 +102,9 @@ export default class TicTacToe extends Component {
 
         if(status){
           colWinner = i
-          whoWinner = col[combination[colWinner][0]] === true ? 'human' : 'computer'
+          whoWinner = (col[combination[colWinner][0]] === true) ? 'human' : 'computer'
+
+          console.log('whoWinner', whoWinner)
   
           break
         }
@@ -106,8 +115,10 @@ export default class TicTacToe extends Component {
         statusGameOver = true;
       
       
-      let winCount = whoWinner==='human'? (this.state.playOff.human.winCount+1) : this.state.playOff.computer.winCount+1
-      winCount = statusDraw && winCount-1
+      let winCount = (whoWinner==='human')? (playOff.human.winCount+1) : (playOff.computer.winCount+1)
+      winCount = statusDraw ? winCount-1 : winCount
+
+      console.log('winCount', winCount)
   
       this.setState(()=> {
         let data = {};
@@ -121,17 +132,20 @@ export default class TicTacToe extends Component {
               winCount : winCount
             }
           }else if(statusDraw){
-            ++playOff.draw
+            playOff.draw += 1
           }
   
-          ++playOff.gameCount
+          playOff.gameCount += 1
 
           data.colWinner = combination[colWinner]
           data.whoWinner = whoWinner
           data.inGame = inGame
           
           inGame.statusGameOver = statusGameOver
+          inGame.statusDraw = statusDraw
 
+          this.modalShow()
+          
           return data;
         }    
       })
@@ -141,19 +155,34 @@ export default class TicTacToe extends Component {
   }
 
   resetGame = ()=>{
+    this.resetMatch()
     
+    let playOff = this.state.playOff
+
+    playOff.human.winCount = 0
+    playOff.computer.winCount = 0
+    playOff.gameCount = 1
+    playOff.draw = 0
+
+    this.setState(()=>{
+      return {
+        playOff : playOff
+      }
+    })
   }
 
   resetMatch = ()=>{
     let state = this.state
 
     let col = state.col
-    col.fill(undefined, 0, col.length-1)
+    col.fill(undefined, 0, col.length)
 
     const colWinner = []
     const whoWinner = null
     const inGame = {
-      whoTurn : 'human'
+      whoTurn : 'human',
+      statusGameOver : false,
+      statusDraw : false
     }
 
     this.setState(()=>{
@@ -164,28 +193,34 @@ export default class TicTacToe extends Component {
         inGame : inGame
       };
     })
+
+    this.modalHide()
   }
 
   computerTurn = ()=>{
-    let col = this.state.col
+    if(!this.state.inGame.statusGameOver){
+      let col = this.state.col
+  
+      let emptyCol = []
+  
+      col.forEach((el, idx)=>{
+        if(el===undefined)
+          emptyCol[emptyCol.length] = idx
+      })
+  
+      const rand = this.getRandomArrayIndex(this.state.col, emptyCol)
+      console.log('rand', rand)
+  
+      col[rand] = false
+  
+      this.setState(()=>{
+        return {col : col}
+      })
+  
+      this.matchWinner()
+    }
 
-    let emptyCol = []
-
-    col.forEach((el, idx)=>{
-      if(el===undefined)
-        emptyCol[emptyCol.length] = idx
-    })
-
-    const rand = this.getRandomArrayIndex(this.state.col, emptyCol)
-    console.log('rand', rand)
-
-    col[rand] = false
-
-    this.setState(()=>{
-      return {col : col}
-    })
-
-    this.matchWinner()
+    console.log('aftet check win', this.state)
   }
 
   humanTurn = (e, id) => {
@@ -234,21 +269,49 @@ export default class TicTacToe extends Component {
 
     // NOTE lihat catatan bawah selengkapnya
     // this.context.changeState({
-    //   root : {backgroundColor : '#14bdac'}
+    //   root : {backgroundColor : '#fff'}
     // })
 
+    // this.context.changeState({
+    //   root : {backgroundColor : '#14bdac'}
+    // })
   }
 
   componentWillUnmount(){
-    this.context.changeState({
-      root : {backgroundColor : '#fff'}
-    })
+    // this.context.changeState({
+    //   root : {backgroundColor : '#fff'}
+    // })
+
+    // this.context.changeState({
+    //   root : {backgroundColor : '#14bdac'}
+    // })
   }
+
+  modalHide = ()=>{ this.setState(()=>{
+    let modal = this.state.modal
+    modal.mdEnd.status = false
+
+    return {
+      modal : modal
+    } 
+  })}
+
+  modalShow = ()=>{ this.setState(()=>{
+    let modal = this.state.modal
+    modal.mdEnd.status = true
+
+    return {
+      modal : modal
+    } 
+  })}
   
   
 
   divCont = styled.div`
       background-color : #14bdac;
+      border-radius : 20px;
+      // top : 50%;
+      // left : 50%;
   `;
 
   render() {
@@ -265,18 +328,27 @@ export default class TicTacToe extends Component {
 
             return (
               <main id="main" style={{ minHeight: '100vh' }}>
-                <Context.Provider value={{ winner: this.state.colWinner }}>
+                <Context.Provider value={{ winner: this.state.colWinner, inGame: this.state.inGame }}>
                 <section className="section">
                   <this.divCont className="container">
                     <div className="row" style={{ 
                       marginBottom: '60px'
                     }}>
-                      <div className="col">
-                        
+                      <div className="col text-center">
+                        <h4 style={{ 
+                          fontFamily : "'Bungee Spice', cursive",
+                          fontSize : '102px',
+                          textShadow : '-8px 8px black'
+                         }}>TIC TAC TOE</h4>
+                         <span style={{ 
+                            fontFamily : '"Nova Flat", cursive',
+                            fontSize : '50px',
+                            color : '#61867F'
+                          }}>THE GAME</span>
                       </div>
                     </div>
                     <div className="row">
-                      <div className="col-md-6 mx-auto" id="content-tt">
+                      <div className="col-md-7 mx-auto" id="content-tt">
                         <div className="row" >
                           <div className="col col-tt-default d-flex justify-content-center align-items-center" data-click={(this.state.col[0]===true || this.state.col[0]===false || this.state.inGame.statusGameOver) ? '' : true} onClick={(e)=> this.humanTurn(e, 0)} >
                               <ColComp col={this.state.col[0]} key={0} id={0}/>
@@ -311,14 +383,75 @@ export default class TicTacToe extends Component {
                           </div>
                         </div>
                       </div>
+                      <div className="col-md-1 d-md-block d-sm-none">
+                        <div className="row" style={{ height: '100%' }}>
+                          <div className="col d-flex justify-content-end align-items-center align-content-center" style={{ height : '100%' }}>
+                            <Button onClick={this.resetGame} style={{ backgroundColor: '#EE805A', borderColor: '#EE805A', boxShadow:'black -6px 5px 0px 0px' }}>
+                              <FontAwesomeIcon icon={faRepeat} size="4x"></FontAwesomeIcon>
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
+                    <div className="row">
+                      <div className="col-md-12">
+                        <div className="row">
+                          <div className="col-md-4">
+                            <div className="row">
+                              <div className="col-12 text-center text-game">
+                                Human Win
+                              </div>
+                              <div className="col-12 text-center text-game">
+                                {this.state.playOff.human.winCount}
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="col-md-4">
+                            <div className="row">
+                              <div className="col-12 text-center text-game">
+                                Computer Win
+                              </div>
+                              <div className="col-12 text-center text-game">
+                                {this.state.playOff.computer.winCount}
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="col-md-4">
+                            <div className="row">
+                              <div className="col-12 text-center text-game">
+                                Draw
+                              </div>
+                              <div className="col-12 text-center text-game">
+                                {this.state.playOff.draw}
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+            
                   </this.divCont>
                 </section>
                 </Context.Provider>
+
+                <Modal show={this.state.modal.mdEnd.status} onHide={this.modalHide} animation={true} centered>
+                  <Modal.Body className="d-flex justify-content-center align-items-center">
+                    <Button onClick={this.resetMatch} style={{ backgroundColor: '#EE805A', borderColor: '#EE805A', boxShadow:'black -6px 5px 0px 0px' }}>
+                      <FontAwesomeIcon icon={faPlay} size="4x"/>
+                      <h5 className="text-game"> Play Again</h5>
+                    </Button>
+                  </Modal.Body>
+                </Modal>
+
               </main>
             )
           }
         }
+
+        
       </GlobalConsumer>
       
     )

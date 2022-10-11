@@ -19,7 +19,9 @@ const ColComp = (props) => {
     let ret = <Context.Consumer>
         {
             (value)=>{
-                const isWinner = value.winner.includes(props.id)
+                let isWinner = false
+                if(value.inGame.statusGameOver && !value.inGame.statusDraw)
+                    isWinner = value.winner.includes(props.id)
 
                 if(props.col===true){
                     return (<FontAwesomeIcon icon={faO} size={'4x'} className={`action-human ${isWinner? 'match-winner' : ''}`} data-aos="zoom-in" /> );

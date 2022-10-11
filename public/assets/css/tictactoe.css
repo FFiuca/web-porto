@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Nabla&family=Nova+Flat&family=Passion+One&display=swap');
+
 :root{
     --bg-ttt : #0da192;
 }
 
 .bg-ttt{
     background-color: var(--bg-ttt);
+}
+
+.text-game{
+    font-family: 'Passion One', cursive;
+    font-size: 50px;
+    color: honeydew;
 }
 
 
