@@ -4,10 +4,10 @@ export default class FooterComp extends Component {
   render() {
     return (
         <footer id="footer">
-        <div class="container">
+        <div className="container">
           <h3>Thank You! <span style={{ fontSize: '38px' }}>&#128513;</span></h3>
           {/* <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> */}
-          <div class="social-links">
+          <div className="social-links">
                 <a href="https://www.facebook.com/OneofDUStudents" className="facebook" target={'_blank'} rel={['noopener noreferrer']}>
                     <i className="bx bxl-facebook"></i>
                 </a>
@@ -21,10 +21,10 @@ export default class FooterComp extends Component {
                     <i className="bx bxl-linkedin"></i>
                 </a>
           </div>
-          <div class="copyright">
+          <div className="copyright">
             &copy; Copyright <strong><span>MyResume</span></strong>. All Rights Reserved
           </div>
-          <div class="credits">
+          <div className="credits">
             Template Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 
 export default class HeaderComp extends Component {
@@ -9,28 +10,28 @@ export default class HeaderComp extends Component {
         <nav id="navbar" className="navbar nav-menu" data-aos="fade-up">
           <ul>
             <li>
-              <a href="#hero" className="nav-link scrollto active">
+              <Link to="/#hero" className="nav-link scrollto active">
                 <i className="bx bx-home"></i>
                 <span>Home</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#about" className="nav-link scrollto">
+              <Link to="/#about" className="nav-link scrollto">
                 <i className="bx bx-user"></i>
                 <span>About</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#resume" className="nav-link scrollto">
+              <Link to="/#resume" className="nav-link scrollto">
                 <i className="bx bx-file-blank"></i>
                 <span>Resume</span>
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#portfolio" className="nav-link scrollto">
+              <Link to="/#portfolio" className="nav-link scrollto">
                 <i className="bx bx-book-content"></i>
                 <span>Portofolio</span>
-              </a>
+              </Link>
             </li>
             {/* <li>
               <a href="#services" className="nav-link scrollto">

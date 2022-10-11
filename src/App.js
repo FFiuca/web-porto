@@ -5,6 +5,8 @@ import logo from './logo.svg';
 
 import './App.css';
 
+//component
+import HeaderComp from './components/main/HeaderComp';
 
 //page
 import Dashboard from './components/pages/Dashboard';
@@ -14,12 +16,15 @@ import Membership from './components/pages/Membership';
 import Catalog from './components/pages/Catalog';
 import ECommerce from './components/pages/ECommerce';
 
-
 function App() {
   return (
     <React.Fragment>
       <i className="bi bi-list mobile-nav-toggle d-lg-none"></i>
+
       <Router>
+        {/* Hedaer */}
+        <HeaderComp />
+
         <Routes>
           <Route exact path="/" element={<Dashboard />} />
 
@@ -27,7 +32,7 @@ function App() {
           <Route path="/his" element={<HIS></HIS>}></Route>
           <Route path="/catalog" element={<Catalog />} ></Route>
           <Route path="/membership" element={<Membership />} ></Route>
-          <Route path="/tictactoe" element={<TicTacToe />} />
+          <Route path="/tictactoe" element={<TicTacToe coba="hai" />} />
           <Route path="/ecommerce" element={<ECommerce />}></Route>
         </Routes>
 

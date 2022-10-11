@@ -107,7 +107,7 @@ export default class Portfolio extends Component {
               <p>September 2022</p>
               <div className="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 1"><i className="bx bx-plus"></i></a>
-                <Link to={{ pathname : '/tictactoe' }} className="portfolio-lightbox" title="Portfolio Details">
+                <Link to={{ pathname : '/tictactoe', state:{data:'coba'}, prop:{prop:'1'}, props:{props:2} }} className="" title="Portfolio Details">
                   <Button variant={'success'} style={{ borderRadius : '50%' }}>
                       <FontAwesomeIcon icon={faPlay} /> 
                   </Button>

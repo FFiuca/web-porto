@@ -1,0 +1,57 @@
+:root{
+    --bg-ttt : #0da192;
+}
+
+.bg-ttt{
+    background-color: var(--bg-ttt);
+}
+
+
+.col-tt-default {
+    height: 125px;
+    /* width: 100px; */
+    background-color: #0DA192;
+    margin : 10px;
+}
+
+#content-tt .row:nth-child(1) .col-tt-default:first-child{
+    border-radius: 20px 0px 0px 0px;
+}
+
+#content-tt .row:nth-child(1) .col-tt-default:last-child{
+    border-radius: 0px 20px 0px 0px;
+}
+
+#content-tt .row:nth-child(2) .col-tt-default{
+    border-radius: 0px 0px 0px 0px;
+}
+
+#content-tt .row:nth-child(3) .col-tt-default:first-child{
+    border-radius: 0px 0px 0px 20px;
+}
+
+#content-tt .row:nth-child(3) .col-tt-default:last-child{
+    border-radius: 0px 0px 20px 0px;
+}
+
+.action-human{
+    color: honeydew;
+}
+
+.action-computer{
+    color: #212529;
+}
+
+@keyframes win {
+    25% {color: cadetblue}
+    50% {color: darkslategrey}
+    75% {color: peru}
+    100% {color: powderblue}
+}
+
+.match-winner{
+    animation-name: win;
+    animation-delay: 500ms;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
