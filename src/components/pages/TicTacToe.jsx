@@ -1,4 +1,4 @@
-import React, { Component, createContext, useContext } from 'react'
+import React, { Component, createContext, useCallback, useContext, useMemo } from 'react'
 import styled, { ThemeConsumer } from 'styled-components'
 import { useLocation } from 'react-router-dom'
 
@@ -67,6 +67,8 @@ export default class TicTacToe extends Component {
   matchWinner = ()=>{
     console.warn('start match winner')
 
+    console.log(this.state)
+
     const col = this.state.col
     let playOff = this.state.playOff
     let inGame = this.state.inGame
@@ -120,7 +122,9 @@ export default class TicTacToe extends Component {
 
       console.log('winCount', winCount)
   
-      this.setState(()=> {
+      this.setState((a)=> {
+        console.log('a',a)
+
         let data = {};
         if(statusGameOver){
           if(!statusDraw && whoWinner==='human'){
@@ -140,14 +144,19 @@ export default class TicTacToe extends Component {
           data.colWinner = combination[colWinner]
           data.whoWinner = whoWinner
           data.inGame = inGame
+          data.playOff = playOff
           
           inGame.statusGameOver = statusGameOver
           inGame.statusDraw = statusDraw
 
           this.modalShow()
           
+          console.log('Game Over', data)
+
           return data;
-        }    
+        }
+
+        return {};
       })
     // }   
 
@@ -216,8 +225,12 @@ export default class TicTacToe extends Component {
       this.setState(()=>{
         return {col : col}
       })
+      
+      // use memo and callback no needed when use class component
+      // useMemo(()=>{
+        this.matchWinner()
+      // }, [])
   
-      this.matchWinner()
     }
 
     console.log('aftet check win', this.state)
@@ -285,6 +298,10 @@ export default class TicTacToe extends Component {
     // this.context.changeState({
     //   root : {backgroundColor : '#14bdac'}
     // })
+  }
+
+  componentDidUpdate(){
+    // this.matchWinner()
   }
 
   modalHide = ()=>{ this.setState(()=>{

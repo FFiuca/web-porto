@@ -13,7 +13,7 @@ class Index2 extends Component {
 
             
 
-                <React.StrictMode> 
+                {/* <React.StrictMode>  */}
                     <GlobalConsumer>
                                 {
                                     (value)=>{
@@ -25,7 +25,7 @@ class Index2 extends Component {
                                 }
                             
                     </GlobalConsumer>      
-                </React.StrictMode>    
+                {/* </React.StrictMode>     */}
             </GlobalProvider>
         );
     }

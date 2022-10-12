@@ -101,12 +101,12 @@ export default class Portfolio extends Component {
 
         <div className="col-lg-4 col-md-6 portfolio-item filter-card">
           <div className="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-7.jpg" className="img-fluid" alt="" />
+            <img src="\assets\img\portfolio\ttt.png" className="img-fluid" alt="" />
             <div className="portfolio-info">
               <h4>Tic Tac Toe Mini Game</h4>
               <p>September 2022</p>
               <div className="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 1"><i className="bx bx-plus"></i></a>
+                <a href="\assets\img\portfolio\ttt.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 1"><i className="bx bx-plus"></i></a>
                 <Link to={{ pathname : '/tictactoe', state:{data:'coba'}, prop:{prop:'1'}, props:{props:2} }} className="" title="Portfolio Details">
                   <Button variant={'success'} style={{ borderRadius : '50%' }}>
                       <FontAwesomeIcon icon={faPlay} /> 
