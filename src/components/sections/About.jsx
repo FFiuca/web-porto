@@ -69,7 +69,7 @@ export default class About extends Component {
                             <p>
                                 I also often buy some courses to levelling up my skill. Perhaps some day, I can mastering DevOps Skills and others Back-End Technologies because I really love it.
 
-                                As a software engineer, I like to write code as a simply and functionally that perhaps can increase the performance for builded software. Also this is one of my experiences what I got during became software engineer. My goal is I can to be importan people in Technology Word, maybe cretae programming langunge or framework libraries that can help other developers.
+                                As a software engineer, I like to write code as a simply and functionally that perhaps can increase the performance for builded software. Also this is one of my experiences what I got during became software engineer. My goal is I can to be importan people in Technology Word, maybe cretae framework libraries that can help other developers or etc.
                             </p>
                         </div>
                     </div>
